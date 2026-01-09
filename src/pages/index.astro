@@ -1,16 +1,69 @@
 ---
+import "../styles/global.css";
 
+const name = "Amit Rohan R";
+const title = "PhD (Applied Engineering Physics) • RF / Quantum Devices";
+const email = "ar2428@cornell.edu";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{name}</title>
+    <meta name="description" content="Professional website for Amit Rohan R: research, projects, publications, and contact." />
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">{name}</div>
+        <div style="display:flex; gap: 6px; flex-wrap: wrap;">
+          <a href="/">Home</a>
+          <a href="/projects">Projects</a>
+          <a href="/publications">Publications</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </nav>
+
+      <header class="card">
+        <h1>{name}</h1>
+        <div class="small">{title}</div>
+        <p style="margin: 12px 0 0;">
+          I work on superconducting / RF measurement systems and quantum-device experiments.
+          This site highlights selected projects, publications, and ways to reach me.
+        </p>
+        <p style="margin: 12px 0 0;">
+          <a href={"mailto:" + email}>{email}</a>
+        </p>
+      </header>
+
+      <section>
+        <h2>Now</h2>
+        <div class="grid">
+          <div class="card">
+            <b>Research focus</b>
+            <ul class="list">
+              <li>Superconducting resonators / Josephson devices</li>
+              <li>Cryogenic RF measurement + calibration</li>
+              <li>Materials + device characterization</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <b>Next</b>
+            <ul class="list">
+              <li>Add your CV as <code>public/cv.pdf</code></li>
+              <li>Add 3–6 projects with one figure each</li>
+              <li>Add Scholar / GitHub / LinkedIn links</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer">
+        © {new Date().getFullYear()} {name}. Built with Astro.
+      </div>
+    </div>
+  </body>
 </html>
