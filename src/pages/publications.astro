@@ -1,0 +1,57 @@
+---
+import "../styles/global.css";
+import pubs from "../data/publications.json";
+
+const name = "Amit Rohan Rajapurohita";
+const scholarUrl = "https://scholar.google.com/citations?user=iZfq0m0AAAAJ&hl=en";
+const orcidUrl = "https://orcid.org/0009-0001-9788-1259";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Publications • {name}</title>
+    <meta name="description" content="Publications for Amit Rohan Rajapurohita (auto-synced from ORCID)." />
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">{name}</div>
+        <div style="display:flex; gap: 6px; flex-wrap: wrap;">
+          <a href="/">Home</a>
+          <a href="/projects">Projects</a>
+          <a href="/publications">Publications</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </nav>
+
+      <h1>Publications</h1>
+
+      <div class="card">
+        <p class="small" style="margin: 0;">
+          Auto-synced from <a href={orcidUrl} target="_blank" rel="noreferrer">ORCID</a>.  
+          Also on <a href={scholarUrl} target="_blank" rel="noreferrer">Google Scholar</a>.
+        </p>
+        <p class="small" style="margin: 10px 0 0;">Total: {pubs.count}</p>
+      </div>
+
+      <div class="grid" style="margin-top: 16px;">
+        {pubs.items.map((p) => (
+          <div class="card">
+            <b>{p.title}</b>
+            <div class="small">
+              {p.year ?? "Year unknown"}{p.type ? ` • ${p.type}` : ""}
+            </div>
+
+            <div style="margin-top: 10px; display:flex; gap: 10px; flex-wrap: wrap;">
+              {p.doi && <a href={`https://doi.org/${p.doi}`} target="_blank" rel="noreferrer">DOI</a>}
+              {p.url && <a href={p.url} target="_blank" rel="noreferrer">Link</a>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </body>
+</html>

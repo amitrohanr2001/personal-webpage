@@ -1,0 +1,21 @@
+{
+  "orcid": "0009-0001-9788-1259",
+  "updated_by": "github-actions",
+  "count": 2,
+  "items": [
+    {
+      "title": "Structural, electronic, and superconducting properties of MBE-grown tantalum nitride films on c-plane sapphire",
+      "year": 2025,
+      "type": "journal-article",
+      "doi": "10.1063/5.0267713",
+      "url": "https://doi.org/10.1063/5.0267713"
+    },
+    {
+      "title": "Tuning the Resistance of a VO<sub>2</sub> Junction by Focused Laser Beam and Atomic Force Microscopy",
+      "year": 2025,
+      "type": "journal-article",
+      "doi": "10.1002/aelm.202400249",
+      "url": "https://doi.org/10.1002/aelm.202400249"
+    }
+  ]
+}
