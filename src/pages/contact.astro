@@ -1,0 +1,110 @@
+---
+import "../styles/global.css";
+
+const name = "Amit Rohan Rajapurohita";
+const email = "ar2428@cornell.edu";
+
+const scholarUrl = "https://scholar.google.com/citations?user=iZfq0m0AAAAJ&hl=en";
+const orcidUrl = "https://orcid.org/0009-0001-9788-1259";
+const linkedinUrl = "https://www.linkedin.com/in/amit-rohan-rajapurohita/";
+const labUrl = "https://jena-xing.engineering.cornell.edu/";
+
+// 👉 Replace with your Formspree endpoint
+const formAction = "https://formspree.io/f/xkoogdze";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact • {name}</title>
+    <meta name="description" content="Contact Amit Rohan Rajapurohita." />
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">{name}</div>
+        <div style="display:flex; gap: 6px; flex-wrap: wrap;">
+          <a href="/">Home</a>
+          <a href="/projects">Projects</a>
+          <a href="/publications">Publications</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </nav>
+
+      <h1>Contact</h1>
+
+      <div class="grid">
+        <!-- Contact form -->
+        <div class="card">
+          <h2>Send me a message</h2>
+
+          <form
+            action={formAction}
+            method="POST"
+            style="display:flex; flex-direction:column; gap:12px;"
+          >
+            <input type="hidden" name="_subject" value="Website contact form" />
+
+            <label>
+              <div class="small">Name</div>
+              <input
+                type="text"
+                name="name"
+                required
+                style="width:100%; padding:10px;"
+              />
+            </label>
+
+            <label>
+              <div class="small">Email</div>
+              <input
+                type="email"
+                name="email"
+                required
+                style="width:100%; padding:10px;"
+              />
+            </label>
+
+            <label>
+              <div class="small">Message</div>
+              <textarea
+                name="message"
+                rows="5"
+                required
+                style="width:100%; padding:10px;"
+              ></textarea>
+            </label>
+
+            <button
+              type="submit"
+              style="padding:10px 14px; border-radius:10px; cursor:pointer;"
+            >
+              Send message
+            </button>
+          </form>
+
+          <p class="small" style="margin-top:10px;">
+            You’ll receive a reply at the email you provide.
+          </p>
+        </div>
+
+        <!-- Direct contact info -->
+        <div class="card">
+          <h2>Other ways to reach me</h2>
+
+          <ul class="list">
+            <li><a href={"mailto:" + email}>{email}</a></li>
+            <li><a href={linkedinUrl} target="_blank" rel="noreferrer">LinkedIn</a></li>
+          </ul>
+
+          <p class="small" style="margin-top:12px;">
+            For collaborations, research discussions, or speaking invitations,
+            feel free to use the form or email directly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
