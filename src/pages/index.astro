@@ -2,11 +2,14 @@
 import "../styles/global.css";
 
 const name = "Amit Rohan Rajapurohita";
-const title = "PhD student • Applied Engineering Physics • Cornell University • RF / Quantum Devices";
+const title = "PhD student • Cornell University";
 const email = "ar2428@cornell.edu";
 
 const scholarUrl = "https://scholar.google.com/citations?user=iZfq0m0AAAAJ&hl=en";
 const orcidUrl = "https://orcid.org/0009-0001-9788-1259";
+const linkedinUrl = "https://www.linkedin.com/in/amit-rohan-rajapurohita/";
+const laburl = "https://jena-xing.engineering.cornell.edu"
+const djurl = "https://djena.engineering.cornell.edu"
 
 // If you add a CV later, place it at: public/cv.pdf
 const cvUrl = "/cv.pdf";
@@ -36,17 +39,16 @@ const cvUrl = "/cv.pdf";
         <h1>{name}</h1>
         <div class="small">{title}</div>
         <p style="margin: 12px 0 0;">
-          I work on superconducting / RF measurement systems and quantum-device experiments.
-          This site highlights selected projects, publications, and ways to reach me.
+          My projects are on MBE grown nitride superconductor - semiconductor devices with focus on fabrication and measurements.
+          I work in the <a href={laburl} target="_blank" rel="noreferrer">Jena-Xing Lab</a> at Cornell University under the supervision of <a href={djurl} target="_blank" rel="noreferrer">Prof Debdeep Jena</a>.
+          This site highlights my projects, publications, and ways to reach me.
         </p>
         <p style="margin: 12px 0 0; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
           <a href={"mailto:" + email}>{email}</a>
           <span class="small">•</span>
           <a href={scholarUrl} target="_blank" rel="noreferrer">Google Scholar</a>
           <span class="small">•</span>
-          <a href={orcidUrl} target="_blank" rel="noreferrer">ORCID</a>
-          <span class="small">•</span>
-          <a href={cvUrl}>CV</a>
+          <a href={linkedinUrl} target="_blank" rel="noreferrer">LinkedIn</a>
         </p>
       </header>
 
