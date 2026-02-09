@@ -1,8 +1,15 @@
 {
   "orcid": "0009-0001-9788-1259",
   "updated_by": "github-actions",
-  "count": 2,
+  "count": 3,
   "items": [
+    {
+      "title": "Effect of substrate miscut angle on critical thickness, structural and electronic properties of MBE-grown NbN films on c-plane sapphire",
+      "year": 2026,
+      "type": "journal-article",
+      "doi": "10.1063/5.0312575",
+      "url": "https://doi.org/10.1063/5.0312575"
+    },
     {
       "title": "Structural, electronic, and superconducting properties of MBE-grown tantalum nitride films on c-plane sapphire",
       "year": 2025,
