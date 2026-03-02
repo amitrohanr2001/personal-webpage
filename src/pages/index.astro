@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import pubs from "../data/publications.json";
 
 const name = "Amit Rohan Rajapurohita";
 const title = "PhD student • Cornell University";
@@ -10,6 +11,8 @@ const orcidUrl = "https://orcid.org/0009-0001-9788-1259";
 const linkedinUrl = "https://www.linkedin.com/in/amit-rohan-rajapurohita/";
 const laburl = "https://jena-xing.engineering.cornell.edu"
 const djurl = "https://djena.engineering.cornell.edu"
+
+const latestPub = (pubs?.items?.length ?? 0) > 0 ? pubs.items[0] : null;
 
 // If you add a CV later, place it at: public/cv.pdf
 const cvUrl = "/cv.pdf";
@@ -53,10 +56,9 @@ const cvUrl = "/cv.pdf";
       </header>
 
       <section>
-        <h2>Now</h2>
+        <h2>Research focus</h2>
         <div class="grid">
           <div class="card">
-            <b>Research focus</b>
             <ul class="list">
               <li>Superconducting resonators / Josephson Junctions / transmon qubits</li>
               <li>Superconductor - semiconductor low noise amplifiers</li>
@@ -64,30 +66,53 @@ const cvUrl = "/cv.pdf";
               <li>Nanofabrication</li>
             </ul>
           </div>
-
-          <div class="card">
-            <b>Next</b>
-            <ul class="list">
-              <li>Add your CV as <code>public/cv.pdf</code></li>
-              <li>Add 3–6 projects with one figure each</li>
-              <li>Add Scholar / GitHub / LinkedIn links</li>
-            </ul>
-          </div>
         </div>
       </section>
 
+      
       <section>
-        <h2>Publications</h2>
+        <h2>Latest publication</h2>
+
         <div class="card">
-          <p style="margin: 0;">
-            Full list on <a href="/publications">this page</a> (auto-synced from ORCID),
-            and on <a href={scholarUrl} target="_blank" rel="noreferrer">Google Scholar</a>.
-          </p>
+          {latestPub ? (
+            <>
+              <b>{latestPub.title}</b>
+              <div class="small">
+                {latestPub.year ?? "Year unknown"}
+                {latestPub.type ? ` • ${latestPub.type}` : ""}
+              </div>
+
+              <div style="margin-top: 10px; display:flex; gap: 10px; flex-wrap: wrap;">
+                {latestPub.doi && (
+                  <a href={`https://doi.org/${latestPub.doi}`} target="_blank" rel="noreferrer">
+                    DOI
+                  </a>
+                )}
+                {latestPub.url && (
+                  <a href={latestPub.url} target="_blank" rel="noreferrer">
+                    Link
+                  </a>
+                )}
+              </div>
+
+              <div style="margin-top: 8px;">
+                <a href="/publications">All publications →</a>
+              </div>
+            </>
+          ) : (
+            <>
+              <p style="margin:0;">No publications found yet.</p>
+
+              <p class="small" style="margin:10px 0 0;">
+                See <a href="/publications">all publications</a>.
+              </p>
+            </>
+          )}
         </div>
       </section>
 
       <div class="footer">
-        © {new Date().getFullYear()} {name}. Built with Astro.
+        © {new Date().getFullYear()} {name}.
       </div>
     </div>
   </body>
