@@ -29,14 +29,6 @@ const orcidUrl = "https://orcid.org/0009-0001-9788-1259";
 
       <h1>Publications</h1>
 
-      <div class="card">
-        <p class="small" style="margin: 0;">
-          Auto-synced from <a href={orcidUrl} target="_blank" rel="noreferrer">ORCID</a>.  
-          Also on <a href={scholarUrl} target="_blank" rel="noreferrer">Google Scholar</a>.
-        </p>
-        <p class="small" style="margin: 10px 0 0;">Total: {pubs.count}</p>
-      </div>
-
       <div class="grid" style="margin-top: 16px;">
         {pubs.items.map((p) => (
           <div class="card">
@@ -51,6 +43,14 @@ const orcidUrl = "https://orcid.org/0009-0001-9788-1259";
             </div>
           </div>
         ))}
+      </div>
+
+      <div class="card">
+        <p class="small" style="margin: 0;">
+          Auto-synced from <a href={orcidUrl} target="_blank" rel="noreferrer">ORCID</a>.  
+          Also on <a href={scholarUrl} target="_blank" rel="noreferrer">Google Scholar</a>.
+        </p>
+        <p class="small" style="margin: 10px 0 0;">Total: {pubs.count}</p>
       </div>
     </div>
   </body>
